@@ -19,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(&socket, SIGNAL(connected()), this, SLOT(connectedToHost()));
     connect(&socket, SIGNAL(disconnected()), this, SLOT(disconnectedFromHost()));
     connect(&socket, SIGNAL(readyRead()), this, SLOT(readFromHost()));
+    ui->textBrowserOutput->setReadOnly(true);
 }
 
 MainWindow::~MainWindow()
@@ -58,4 +59,9 @@ void MainWindow::on_pushButtonSend_clicked()
     QByteArray cmd;
     cmd.append(ui->lineEditCmd->text());
     socket.write(cmd);
+}
+
+void MainWindow::on_pushButtonClear_clicked()
+{
+   ui->textBrowserOutput->clear();
 }

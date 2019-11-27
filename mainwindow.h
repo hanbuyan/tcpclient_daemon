@@ -24,6 +24,8 @@ private slots:
 
     void on_pushButtonSend_clicked();
 
+    void on_pushButtonClear_clicked();
+
 private:
     Ui::MainWindow *ui;
     QTcpSocket socket;
