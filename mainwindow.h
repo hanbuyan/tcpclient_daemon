@@ -26,6 +26,19 @@ private slots:
 
     void on_pushButtonClear_clicked();
 
+    void on_comboBoxAddrs_activated(const QString &arg1);
+
+    void on_comboBoxCmds_activated(const QString &arg1);
+
+    void on_pushButtonSettings_clicked();
+
+    void saveToJson();
+    void loadFromJson();
+
+    void on_pushButtonAddIp_clicked();
+
+    void on_pushButtonAddCmd_clicked();
+
 private:
     Ui::MainWindow *ui;
     QTcpSocket socket;
