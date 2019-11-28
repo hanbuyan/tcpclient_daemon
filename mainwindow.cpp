@@ -102,7 +102,6 @@ void MainWindow::on_pushButtonSettings_clicked()
        ui->comboBoxAddrs->clear();
        ui->comboBoxCmds->addItems(dialog.getCmdList());
        ui->comboBoxAddrs->addItems(dialog.getAddrList());
-       saveToJson();
     }
 }
 
@@ -162,4 +161,9 @@ void MainWindow::on_pushButtonAddIp_clicked()
 void MainWindow::on_pushButtonAddCmd_clicked()
 {
    ui->comboBoxCmds->addItem(ui->lineEditCmd->text());
+}
+
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+   saveToJson();
 }

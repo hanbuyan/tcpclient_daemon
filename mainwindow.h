@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QTcpSocket>
+#include <QCloseEvent>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -38,6 +39,9 @@ private slots:
     void on_pushButtonAddIp_clicked();
 
     void on_pushButtonAddCmd_clicked();
+
+protected:
+    void closeEvent(QCloseEvent *event) override;
 
 private:
     Ui::MainWindow *ui;
