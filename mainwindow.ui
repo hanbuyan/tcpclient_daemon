@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>FLRemotePromptClient</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -23,7 +23,14 @@
      </widget>
     </item>
     <item row="0" column="0">
-     <widget class="QComboBox" name="comboBoxAddrs"/>
+     <widget class="QComboBox" name="comboBoxAddrs">
+      <property name="minimumSize">
+       <size>
+        <width>150</width>
+        <height>0</height>
+       </size>
+      </property>
+     </widget>
     </item>
     <item row="2" column="0" colspan="12">
      <widget class="QTextBrowser" name="textBrowserOutput"/>

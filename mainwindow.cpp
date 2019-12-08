@@ -7,6 +7,7 @@
 #include <QJsonArray>
 #include <QFile>
 #include <QDateTime>
+#include <QDir>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -122,7 +123,7 @@ void MainWindow::saveToJson()
     QString val = QJsonDocument( object).toJson();
 
     QFile file;
-    file.setFileName("settings.ini");
+    file.setFileName(QDir::homePath() + "/settings.ini");
     if (file.open(QIODevice::WriteOnly | QIODevice::Text)){
         file.write(val.toStdString().c_str());
         file.close();
@@ -133,7 +134,7 @@ void MainWindow::loadFromJson()
 {
     QString val;
     QFile file;
-    file.setFileName("settings.ini");
+    file.setFileName(QDir::homePath() + "/settings.ini");
     if (file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
         val = file.readAll();
